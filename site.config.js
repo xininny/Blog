@@ -10,23 +10,26 @@ const CONFIG = {
     github: "xininny",
     instagram: "",
   },
-  projects: [
-    {
-      name: `xininny-log`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
-  ],
+  // projects: [
+  //   {
+  //     name: `xininny-log`,
+  //     href: "https://github.com/morethanmin/morethan-log",
+  //   },
+  // ],
   // blog setting (required)
   blog: {
-    title: "xininny-log",
-    description: "xininny blog",
+    title: "xininny",
+    description: "xininny's blog",
   },
 
   // CONFIG configration (required)
-  link: "https://xininny-blog.vercel.app/",
+  link: "https://xininny.vercel.app/",
   since: 2024, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
+  seo: {
+    keywords: ["xininny", "Blog"]
+  },
 
   // notion configuration (required)
   notionConfig: {
