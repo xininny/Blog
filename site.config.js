@@ -10,12 +10,12 @@ const CONFIG = {
     github: "xininny",
     instagram: "",
   },
-  // projects: [
-  //   {
-  //     name: `xininny-log`,
-  //     href: "https://github.com/morethanmin/morethan-log",
-  //   },
-  // ],
+  projects: [
+    {
+      name: `xininny-log`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
+  ],
   // blog setting (required)
   blog: {
     title: "xininny",
@@ -56,7 +56,7 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: true,
+    enable: false,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "xininny/Blog",
       "issue-term": "og:title",
