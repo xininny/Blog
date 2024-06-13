@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `xininny-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `resume`,
+      href: "https://xininny.vercel.app/resume",
     },
   ],
   // blog setting (required)
