@@ -23,7 +23,6 @@ const StyledWrapper = styled.div`
   ul {
     display: flex;
     flex-direction: row;
-    backdrop-filter: blur(50px);
     li {
       display: block;
       margin-left: 1rem;
