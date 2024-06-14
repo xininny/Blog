@@ -16,6 +16,7 @@ const CONFIG = {
   //     href: "https://xininny.vercel.app/resume",
   //   },
   // ],
+  projects: undefined,
   // blog setting (required)
   blog: {
     title: "xininny",
@@ -57,7 +58,7 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
