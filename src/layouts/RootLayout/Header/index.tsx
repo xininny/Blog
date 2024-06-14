@@ -28,7 +28,7 @@ const StyledWrapper = styled.div`
   z-index: ${zIndexes.header};
   position: sticky;
   padding: 10px 0;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(100px);
   top: 0;
   background-color: ${({ theme }) => theme.colors.grayA1};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
