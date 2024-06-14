@@ -27,6 +27,7 @@ export default Header
 const StyledWrapper = styled.div`
   z-index: ${zIndexes.header};
   position: sticky;
+  padding: 10px 0;
   top: 0;
   background-color: ${({ theme }) => theme.colors.gray2};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -39,7 +40,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     width: 100%;
     max-width: 1120px;
-    height: 3.5rem;
+    height: 3rem;
     margin: 0 auto;
     &[data-full-width="true"] {
       @media (min-width: 768px) {
@@ -49,7 +50,7 @@ const StyledWrapper = styled.div`
     }
     .nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       align-items: center;
     }
   }
