@@ -16,7 +16,7 @@ const CONFIG = {
   //     href: "https://xininny.vercel.app/resume",
   //   },
   // ],
-  projects: null,
+  projects: undefined,
   // blog setting (required)
   blog: {
     title: "xininny",
