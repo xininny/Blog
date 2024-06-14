@@ -4,18 +4,18 @@ const CONFIG = {
     name: "xininny",
     image: "/xininny.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Security Engineer",
-    bio: "Epilogue",
+    bio: "Seize the moment",
     email: "xininny@gmail.com",
     linkedin: "",
     github: "xininny",
     instagram: "",
   },
-  projects: [
-    {
-      name: `resume`,
-      href: "https://xininny.vercel.app/resume",
-    },
-  ],
+  // projects: [
+  //   {
+  //     name: `resume`,
+  //     href: "https://xininny.vercel.app/resume",
+  //   },
+  // ],
   // blog setting (required)
   blog: {
     title: "xininny",
