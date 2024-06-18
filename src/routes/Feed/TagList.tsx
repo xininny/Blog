@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Emoji } from "src/components/Emoji"
 import { useTagsQuery } from "src/hooks/useTagsQuery"
 
@@ -10,6 +10,7 @@ const TagList: React.FC<Props> = () => {
   const router = useRouter()
   const currentTag = router.query.tag || undefined
   const data = useTagsQuery()
+  const [dataKeys, setDataKeys] = useState<String[]>([])
 
   const handleClickTag = (value: any) => {
     // delete
@@ -32,6 +33,10 @@ const TagList: React.FC<Props> = () => {
     }
   }
 
+  useEffect(() => {
+    setDataKeys(Object.keys(data).sort())
+  }, [])
+
   return (
     <StyledWrapper>
       <div className="top">
@@ -40,7 +45,7 @@ const TagList: React.FC<Props> = () => {
       <div className="list">
         {Object.keys(data).map((key) => (
           <a
-            key={key}
+            key={index}
             data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
