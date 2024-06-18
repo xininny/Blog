@@ -45,7 +45,7 @@ const TagList: React.FC<Props> = () => {
       <div className="list">
         {Object.keys(data).map((key) => (
           <a
-            key={index}
+            key={key}
             data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
