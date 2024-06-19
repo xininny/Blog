@@ -15,7 +15,6 @@ import "prismjs/themes/prism-tomorrow.css"
 import "katex/dist/katex.min.css"
 import { FC } from "react"
 import styled from "@emotion/styled"
-import { pretendard } from "src/assets"
 
 const _NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),
@@ -55,14 +54,10 @@ type Props = {
   recordMap: ExtendedRecordMap
 }
 
-type StyledWrapperProps = {
-  theme: Scheme
-}
-
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
   return (
-    <StyledWrapper theme={scheme as any}>
+    <StyledWrapper>
       <_NotionRenderer
         darkMode={scheme === "dark"}
         recordMap={recordMap}
@@ -83,18 +78,12 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
 
 export default NotionRenderer
 
-const StyledWrapper = styled.div<StyledWrapperProps>`
+const StyledWrapper = styled.div`
   /* // TODO: why render? */
   .notion-collection-page-properties {
     display: none !important;
   }
   .notion-page {
     padding: 0;
-  }
-  .notion {
-    font-family: ${pretendard.style.fontFamily};
-    color: ${({ theme }) =>
-      theme === "dark" ? "rgb(209 213 219)" : "rgb(107 114 128);"};
-    overflow-wrap: break-word;
   }
 `
