@@ -62,7 +62,7 @@ type StyledWrapperProps = {
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
   return (
-    <StyledWrapper>
+    <StyledWrapper theme={scheme as any}>
       <_NotionRenderer
         darkMode={scheme === "dark"}
         recordMap={recordMap}
