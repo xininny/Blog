@@ -15,6 +15,7 @@ import "prismjs/themes/prism-tomorrow.css"
 import "katex/dist/katex.min.css"
 import { FC } from "react"
 import styled from "@emotion/styled"
+import { pretendard } from "src/assets"
 
 const _NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),
@@ -85,5 +86,11 @@ const StyledWrapper = styled.div`
   }
   .notion-page {
     padding: 0;
+  }
+  .notion {
+    font-family: ${pretendard.style.fontFamily};
+    color: ${({theme}) =>
+      theme === "dark" ? "rgb(209 213 219)" : "rgb(107 114 128);"};
+    overflow-wrap: break-word;
   }
 `
