@@ -89,7 +89,7 @@ const StyledWrapper = styled.div`
   }
   .notion {
     font-family: ${pretendard.style.fontFamily};
-    color: ${({theme}) =>
+    color: ${({ theme }) =>
       theme === "dark" ? "rgb(209 213 219)" : "rgb(107 114 128);"};
     overflow-wrap: break-word;
   }
