@@ -16,3 +16,10 @@ export const COLOR_SET: Record<string, string> = {
   E: "rgb(199 210 254)",
   F: "rgb(209 250 229)",
 }
+
+export const CUSTOM_COLOR_SET: Record<string, string> = {
+  "💾 Record": "rgb(232, 222, 238)",
+  "Health": "rgb(144, 238, 144)",
+  "Travel": "rgb(173, 216, 230)",
+  // Add more categories and colors as needed
+};

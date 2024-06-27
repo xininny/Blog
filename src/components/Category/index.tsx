@@ -1,34 +1,37 @@
-import { useRouter } from "next/router"
-import React from "react"
-import { COLOR_SET } from "./constants"
-import styled from "@emotion/styled"
-import { colors } from "src/styles"
+import { useRouter } from "next/router";
+import React from "react";
+import { COLOR_SET, CUSTOM_COLOR_SET } from "./constants";
+import styled from "@emotion/styled";
+import { colors } from "src/styles";
 
 export const getColorClassByName = (name: string): string => {
-  try {
-    let sum = 0
-    name.split("").forEach((alphabet) => (sum = sum + alphabet.charCodeAt(0)))
-    const colorKey = sum
-      .toString(16)
-      ?.[sum.toString(16).length - 1].toUpperCase()
-    return COLOR_SET[colorKey]
-  } catch {
-    return COLOR_SET[0]
+  if (CUSTOM_COLOR_SET[name]) {
+    return CUSTOM_COLOR_SET[name];
   }
-}
+
+  try {
+    let sum = 0;
+    name.split("").forEach((alphabet) => (sum = sum + alphabet.charCodeAt(0)));
+    const colorKey = sum.toString(16)?.[sum.toString(16).length - 1].toUpperCase();
+    return COLOR_SET[colorKey];
+  } catch {
+    return COLOR_SET[0];
+  }
+};
 
 type Props = {
-  children: string
-  readOnly?: boolean
-}
+  children: string;
+  readOnly?: boolean;
+};
 
 const Category: React.FC<Props> = ({ readOnly = false, children }) => {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleClick = (value: string) => {
-    if (readOnly) return
-    router.push(`/?category=${value}`)
-  }
+    if (readOnly) return;
+    router.push(`/?category=${value}`);
+  };
+
   return (
     <StyledWrapper
       onClick={() => handleClick(children)}
@@ -39,10 +42,10 @@ const Category: React.FC<Props> = ({ readOnly = false, children }) => {
     >
       {children}
     </StyledWrapper>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;
 
 const StyledWrapper = styled.div`
   padding-top: 0.25rem;
@@ -55,4 +58,4 @@ const StyledWrapper = styled.div`
   line-height: 1.25rem;
   opacity: 0.9;
   color: ${colors.dark.gray1};
-`
+`;
