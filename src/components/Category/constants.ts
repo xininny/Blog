@@ -18,7 +18,7 @@ export const COLOR_SET: Record<string, string> = {
 }
 
 export const CUSTOM_COLOR_SET: Record<string, string> = {
-  "💾 Record": "rgb(227, 221, 255)",
+  "💾 Record": "rgb(216, 208, 255)",
   "🍎 Project":"rgb(255, 216, 216)",
   "✏️ Study":"rgb(251, 239, 186)",
   // Add more categories and colors as needed
