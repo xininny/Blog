@@ -11,10 +11,7 @@ import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
-import { ThemeProvider } from "src/layouts/RootLayout/ThemeProvider"
-import useScheme from "src/hooks/useScheme"
-import Scripts from "src/layouts/RootLayout/Scripts"
-import React from "react"
+import { RootLayout } from "src/layouts"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
@@ -101,19 +98,8 @@ const DetailPage: NextPageWithLayout = () => {
   )
 }
 
-const DetailLayout = ({ children }: { children: React.ReactNode }) => {
-  const [scheme] = useScheme()
-  
-  return (
-    <ThemeProvider scheme={scheme}>
-      <Scripts />
-      {children}
-    </ThemeProvider>
-  )
-}
-
 DetailPage.getLayout = (page) => {
-  return <DetailLayout>{page}</DetailLayout>
+  return <RootLayout>{page}</RootLayout>
 }
 
 export default DetailPage
