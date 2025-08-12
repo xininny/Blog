@@ -20,6 +20,7 @@ const PostList: React.FC<Props> = ({ q }) => {
   useEffect(() => {
     setFilteredPosts(() => {
       let newFilteredPosts = data
+
       // keyword
       newFilteredPosts = newFilteredPosts.filter((post) => {
         const tagContent = post.tags ? post.tags.join(" ") : ""
@@ -41,6 +42,7 @@ const PostList: React.FC<Props> = ({ q }) => {
             post && post.category && post.category.includes(currentCategory)
         )
       }
+
       // order
       if (currentOrder !== "desc") {
         newFilteredPosts = newFilteredPosts.reverse()
@@ -48,7 +50,7 @@ const PostList: React.FC<Props> = ({ q }) => {
 
       return newFilteredPosts
     })
-  }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts])
+  }, [q, currentTag, currentCategory, currentOrder, data]) // ✅ data 추가
 
   return (
     <>

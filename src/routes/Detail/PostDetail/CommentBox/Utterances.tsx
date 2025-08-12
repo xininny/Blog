@@ -4,8 +4,6 @@ import styled from "@emotion/styled"
 import useScheme from "src/hooks/useScheme"
 import { useRouter } from "next/router"
 
-//TODO: useRef?
-
 type Props = {
   issueTerm: string
 }
@@ -20,26 +18,32 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     const anchor = document.getElementById("comments")
     if (!anchor) return
 
-    script.setAttribute("src", "https://utteranc.es/client.js")
-    script.setAttribute("crossorigin", "anonymous")
-    script.setAttribute("async", `true`)
+    // 기존 스크립트/프레임 제거(중복 방지)
+    anchor.innerHTML = ""
+
+    script.src = "https://utteranc.es/client.js"
+    script.crossOrigin = "anonymous"
+    script.async = true
     script.setAttribute("issue-term", issueTerm)
     script.setAttribute("theme", theme)
+
     const config: Record<string, string> = CONFIG.utterances.config
     Object.keys(config).forEach((key) => {
       script.setAttribute(key, config[key])
     })
+
     anchor.appendChild(script)
+
     return () => {
       anchor.innerHTML = ""
     }
-  }, [scheme, router])
+    // 의존성: 테마 변경, 글 식별자 변경, 라우트 변경 시 재주입
+  }, [scheme, issueTerm, router.asPath])
+
   return (
-    <>
-      <StyledWrapper id="comments">
-        <div className="utterances-frame"></div>
-      </StyledWrapper>
-    </>
+    <StyledWrapper id="comments">
+      <div className="utterances-frame" />
+    </StyledWrapper>
   )
 }
 
