@@ -18,12 +18,29 @@ const filter: FilterPostsOptions = {
 }
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts()
-  const filteredPost = filterPosts(posts, filter)
+  try {
+    const posts = await getPosts()
+    const filteredPost = filterPosts(posts, filter)
 
-  return {
-    paths: filteredPost.map((row) => `/${row.slug}`),
-    fallback: true,
+    // Exclude static pages that have their own routes
+    const staticPages = ['about', 'publications', 'projects', 'cv', 'simple']
+    const dynamicPaths = filteredPost
+      .filter((row) => row.slug && !staticPages.includes(row.slug.toLowerCase()))
+      .map((row) => `/${row.slug}`)
+
+    // Remove duplicates just in case
+    const uniquePaths = [...new Set(dynamicPaths)]
+
+    return {
+      paths: uniquePaths,
+      fallback: true,
+    }
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error)
+    return {
+      paths: [],
+      fallback: true,
+    }
   }
 }
 

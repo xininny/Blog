@@ -11,7 +11,7 @@ export const ProfileHeader = styled.div`
   gap: 2rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: ${({ theme }) => theme.colors.gray2};
+  background: ${({ theme }) => theme?.colors?.gray2 || '#f5f5f5'};
   border-radius: 12px;
 
   @media (max-width: 768px) {
@@ -48,14 +48,14 @@ export const Name = styled.h1`
   margin: 0 0 0.5rem 0;
   font-size: 2rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.gray12};
+  color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
 `
 
 export const Role = styled.h2`
   margin: 0 0 1rem 0;
   font-size: 1.2rem;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.gray10};
+  color: ${({ theme }) => theme?.colors?.gray10 || '#666'};
 `
 
 export const Bio = styled.div`
@@ -69,15 +69,15 @@ export const ContentSection = styled.div`
 export const SectionTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.gray12};
+  color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
   margin: 2.5rem 0 1rem 0;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray4};
+  border-bottom: 2px solid ${({ theme }) => theme?.colors?.gray4 || '#e5e5e5'};
   padding-bottom: 0.5rem;
 `
 
 export const Paragraph = styled.p`
   margin: 1rem 0;
-  color: ${({ theme }) => theme.colors.gray11};
+  color: ${({ theme }) => theme?.colors?.gray11 || '#555'};
   font-size: 1rem;
 `
 
@@ -90,7 +90,7 @@ export const SkillsGrid = styled.div`
 
 export const SkillCategory = styled.div`
   padding: 1.5rem;
-  background: ${({ theme }) => theme.colors.gray2};
+  background: ${({ theme }) => theme?.colors?.gray2 || '#f5f5f5'};
   border-radius: 8px;
 `
 
@@ -98,7 +98,7 @@ export const CategoryTitle = styled.h4`
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.gray12};
+  color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
 `
 
 export const SkillList = styled.ul`
@@ -107,7 +107,7 @@ export const SkillList = styled.ul`
   
   li {
     margin: 0.5rem 0;
-    color: ${({ theme }) => theme.colors.gray10};
+    color: ${({ theme }) => theme?.colors?.gray10 || '#666'};
   }
 `
 
@@ -128,15 +128,15 @@ export const SocialLink = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.gray4};
-  color: ${({ theme }) => theme.colors.gray12};
+  background: ${({ theme }) => theme?.colors?.gray4 || '#e5e5e5'};
+  color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
   text-decoration: none;
   transition: all 0.2s ease;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.gray6};
+    background: ${({ theme }) => theme?.colors?.gray6 || '#d0d0d0'};
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px ${({ theme }) => theme.colors.gray4}60;
+    box-shadow: 0 4px 12px ${({ theme }) => theme?.colors?.gray4 || '#e5e5e5'}60;
   }
 
   svg {

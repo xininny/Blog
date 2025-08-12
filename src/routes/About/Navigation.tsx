@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
             key={tab.id}
             as={Link}
             href={tab.href}
-            isActive={currentPath === tab.href}
+            $isActive={currentPath === tab.href}
           >
             {tab.label}
           </TabButton>
@@ -36,7 +36,7 @@ const Navigation: React.FC = () => {
         <TabButton
           as={Link}
           href="/cv"
-          isActive={currentPath === "/cv"}
+          $isActive={currentPath === "/cv"}
         >
           CV
         </TabButton>

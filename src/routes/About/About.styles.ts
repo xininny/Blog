@@ -17,7 +17,7 @@ export const TabContainer = styled.div`
 
 export const TabList = styled.div`
   display: flex;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray4};
+  border-bottom: 2px solid ${({ theme }) => theme?.colors?.gray4 || '#e5e5e5'};
   margin-bottom: 2rem;
   overflow-x: auto;
   max-width: 56rem;
@@ -29,7 +29,7 @@ export const TabList = styled.div`
   }
 `
 
-export const TabButton = styled.a<{ isActive: boolean }>`
+export const TabButton = styled.a<{ $isActive: boolean }>`
   display: inline-block;
   padding: 1rem 2rem;
   border: none;
@@ -37,17 +37,17 @@ export const TabButton = styled.a<{ isActive: boolean }>`
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  color: ${({ theme, isActive }) => 
-    isActive ? theme.colors.gray12 : theme.colors.gray10};
-  border-bottom: 3px solid ${({ theme, isActive }) => 
-    isActive ? theme.colors.gray12 : "transparent"};
+  color: ${({ theme, $isActive }) => 
+    $isActive ? (theme?.colors?.gray12 || '#000') : (theme?.colors?.gray10 || '#666')};
+  border-bottom: 3px solid ${({ theme, $isActive }) => 
+    $isActive ? (theme?.colors?.gray12 || '#000') : "transparent"};
   transition: all 0.2s ease;
   white-space: nowrap;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.gray12};
-    background-color: ${({ theme }) => theme.colors.gray2};
+    color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
+    background-color: ${({ theme }) => theme?.colors?.gray2 || '#f5f5f5'};
   }
 
   @media (max-width: 768px) {
@@ -64,15 +64,15 @@ export const BlogTabButton = styled.a`
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.gray10};
+  color: ${({ theme }) => theme?.colors?.gray10 || '#666'};
   border-bottom: 3px solid transparent;
   transition: all 0.2s ease;
   white-space: nowrap;
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.gray12};
-    background-color: ${({ theme }) => theme.colors.gray2};
+    color: ${({ theme }) => theme?.colors?.gray12 || '#000'};
+    background-color: ${({ theme }) => theme?.colors?.gray2 || '#f5f5f5'};
   }
 
   @media (max-width: 768px) {
@@ -87,7 +87,7 @@ export const TabContent = styled.div`
   border-radius: 1.5rem;
   max-width: 56rem;
   background-color: ${({ theme }) =>
-    theme.scheme === "light" ? "white" : theme.colors.gray4};
+    theme?.scheme === "light" ? "white" : (theme?.colors?.gray4 || '#2a2a2a')};
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   margin: 0 auto;
