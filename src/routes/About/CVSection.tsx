@@ -193,7 +193,7 @@ const CVSection: React.FC = () => {
           <PersonName>Mijin Jeon</PersonName>
           <InfoItem>
             <InfoLabel>Current:</InfoLabel>
-            <span>Master's Student</span>
+            <span>Master&apos;s Student</span>
           </InfoItem>
           <InfoItem>
             <InfoLabel>Email:</InfoLabel>

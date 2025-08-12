@@ -1,31 +1,22 @@
-import React from "react"
+import Link from "next/link"
 
-export default function SimplePage() {
+export default function Simple() {
   return (
-    <div style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
-      <h1>Simple Test Page</h1>
-      <p>If you can see this, Next.js is working!</p>
-      <p>This page has no Notion dependencies.</p>
-
-      <h2>Navigation Test</h2>
+    <nav>
       <ul>
         <li>
-          <a href="/about">About (static page)</a>
+          <Link href="/about/">About</Link>
         </li>
         <li>
-          <a href="/projects">Projects (static page)</a>
+          <Link href="/projects/">Projects</Link>
         </li>
         <li>
-          <a href="/publications">Publications (static page)</a>
+          <Link href="/publications/">Publications</Link>
         </li>
         <li>
-          <a href="/cv">CV (static page)</a>
+          <Link href="/cv/">CV</Link>
         </li>
       </ul>
-
-      <p>
-        <strong>Time:</strong> {new Date().toLocaleString()}
-      </p>
-    </div>
+    </nav>
   )
 }
