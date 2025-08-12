@@ -27,7 +27,17 @@ export const ProfileImage = styled.img`
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid ${({ theme }) => theme.colors.gray6};
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 
+      0 6px 16px rgba(0, 0, 0, 0.12),
+      0 3px 6px rgba(0, 0, 0, 0.08);
+  }
 `
 
 export const HeaderInfo = styled.div`
